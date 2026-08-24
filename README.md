@@ -1,4 +1,4 @@
-# AWS EC2 to Azure using migrate
+# AWS EC2 to Azure Using Migrate
 
 ## Video walkthrough: 
 Jeremiah Brown | Azure Cloud Engineer | Linkedin: https://www.linkedin.com/in/jeremiah-brown12/
