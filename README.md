@@ -48,10 +48,21 @@ This project covers the complete migration lifecycle — provisioning infrastruc
 - Hands-on diagnosis using PowerShell and Azure CLI — service status checks, firewall rule inspection, NSG rule auditing, TCP connectivity testing (Test-NetConnection), and live log analysis (svagents logs) to isolate network-layer vs. application-layer failures
 
 
-## Design Decisions
+## Important Design Decisions
 
 ###
 
+- Two resource groups — staging and target. Migration infrastructure (discovery and replication appliances, replication storage cache, Recovery Services Vault) lives in rg-migrate-source-jeremiah, separate from the migrated VM’s home in rg-migrate-target-jeremiah. This keeps the temporary migration tooling cleanly separable from the actual workload once cutover happens.
+
+- No VPN between clouds. All traffic — discovery, replication, and the mobility agent’s data channel — flows over the public internet using the EC2 instance’s public IP (stabilized with an Elastic IP after early testing revealed it changed on every restart). This kept the lab cost-effective and infrastructure-light, but it’s also the direct cause of the majority of the hard problems in this project: Azure Migrate’s tooling assumes private connectivity exists, and getting it to work without one meant working around defaults at almost every layer — DNS resolution, appliance-to-source routing, and the mobility agent’s own hardcoded IP behavior.
+
+- Non-overlapping CIDRs. AWS VPC uses 10.0.0.0/16; Azure VNet uses 10.1.0.0/16. Kept deliberately distinct so no routing conflict would arise if private connectivity were added later.
+
+- WinRM automated via user_data. The EC2 instance’s user_data script sets the Administrator password at first boot, but WinRM itself still required manual configuration afterward (winrm quickconfig) plus a firewall scope fix, since the default WinRM firewall rule only permits connections from the same local subnet — a gap not covered by initial provisioning.
+
+- Manual Mobility Service installation, with direct config patching. Push-installation from the replication appliance consistently failed in this cross-cloud setup: the appliance’s discovered-server record stores the source machine’s OS-reported private IP, which is unreachable from Azure without a VPN. Manual installation on the EC2 instance was required, and even then the agent’s own generated configuration files hardcoded the replication appliance’s private Azure IP and bypassed DNS entirely — an undocumented behavior that required directly patching the agent’s JSON config with the appliance’s public IP before registration would succeed.
+
+  
 ## Tools and Services Used
 ###
 ```
