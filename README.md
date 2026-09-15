@@ -80,12 +80,29 @@ This project covers the complete migration lifecycle — provisioning infrastruc
 ## Prerequisites
 
 ###
- Before deploying, install and configure:
+- AWS account with programmatic access
+- Azure subscription with sufficient vCPU quota
+- Terraform installed
+- AWS CLI installed and configured
+- Azure CLI installed and authenticated
+- RDP access capability for Windows VMs
+- Refer to each phase README for detailed prerequisites and deployment steps.
+  
 
 
 ## Estimated Cost
+Costs reflect a short-lived lab environment with resources running only during active testing and migration.
 
 ###
+|Resource |Estimated Cost | 
+|----------------------------------------------------|------------------------------------------| 
+|EC2 t3.large (Windows Server 2022) |~$0.1072/hour | 
+|Discovery appliance – Standard_D8s_v3 |~$0.7520/hour |
+|Replication appliance – Standard_E16s_v5 |~$1.7440/hour | 
+|Replication appliance OS disk (650GB, Standard LRS) |(~$0.44/day while it exists)| 
+|Storage account – replication cache (~30–50GB LRS) |~$0.02–0.04/day | 
+|Target VM post-cutover – Standard_D2s_v3 |~$0.1880/hour | 
+|**Total for a full day with all appliances running**|**~$50–55** |
 
 ## Verification Checklist & Troubleshooting
 ###
