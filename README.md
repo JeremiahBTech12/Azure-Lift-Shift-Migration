@@ -65,9 +65,18 @@ This project covers the complete migration lifecycle — provisioning infrastruc
   
 ## Tools and Services Used
 ###
-```
+| Category | Tools |
+|----------|-------| 
+| Infrastructure as Code | Terraform | 
+| Source cloud | AWS - EC2, VPC, IAM, Security Groups, Elastic IP | 
+| Target cloud | Azure - Azure Migrate, Azure Site Recovery, Recovery Services Vault, VNet, Network Security Groups, Managed Disks | 
+| OS | Windows Server 2022 | 
+| Scripting/CLI | PowerShell, Azure CLI, AWS CLI | 
+| Migration tool | Azure Migrate (discovery, assessment, appliance managment) | 
+| Replication engine | Azure Site Recovery (Mobility Service agent, replication appliance) |
+| Networking/Connectivity | Public internet (no VPN) -WinRM, RDP, HTTPS/9443 replication traffic |
 
-```
+
 ## Prerequisites
 
 ###
