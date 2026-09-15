@@ -12,9 +12,6 @@ Jeremiah Brown | Azure Cloud Engineer | Linkedin: https://www.linkedin.com/in/je
 
 ###
 
-## Business Problem
-
-###
 
 ## Architecture Flow
  
@@ -23,9 +20,10 @@ Jeremiah Brown | Azure Cloud Engineer | Linkedin: https://www.linkedin.com/in/je
 ##  What gets built
 
 ###
-```
 
-```
+## Design Decisions
+
+###
 
 ## Tools and Services Used
 ###
@@ -38,13 +36,10 @@ Jeremiah Brown | Azure Cloud Engineer | Linkedin: https://www.linkedin.com/in/je
  Before deploying, install and configure:
 
 
-## Terraform Configuration
+## Estimated Cost
 
 ###
 
 ## Verification Checklist
 ###
 
-## Troubleshooting & Lessons Learned
-
-###
