@@ -104,7 +104,8 @@ Costs reflect a short-lived lab environment with resources running only during a
 |Target VM post-cutover – Standard_D2s_v3 |~$0.1880/hour | 
 |**Total for a full day with all appliances running**|**~$50–55** |
 
-## Verification Checklist & Troubleshooting
-###
+##
+Destroy all resources immediately after completing the lab. See teardown instructions in each phase README.
 
-## Thank you for following along watching me create real-world cloud solutions. This is only part of my full Azure cloud portfolio.
+
+## Complete walkthroughs, configurations, and troubleshooting shown in specified folders.
