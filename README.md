@@ -18,7 +18,8 @@ End-to-end migration of a Windows Server workload from AWS EC2 to Azure, using A
 
 This project covers the complete migration lifecycle — provisioning infrastructure, discovering and assessing the source machine, replicating it, and executing cutover — along with troubleshooting the real-world issues that come up when migrating across clouds without private connectivity in place.
 ## Architecture Flow
- 
+ <img width="2823" height="3544" alt="migration-architecture aws to azre diagram 2" src="https://github.com/user-attachments/assets/7ffaec1f-ae6b-43e4-b50c-beafa1a42bbc" />
+
 ###
 
 ##  What gets built
