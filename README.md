@@ -40,6 +40,6 @@ Jeremiah Brown | Azure Cloud Engineer | Linkedin: https://www.linkedin.com/in/je
 
 ###
 
-## Verification Checklist
+## Verification Checklist & Troubleshooting
 ###
 
