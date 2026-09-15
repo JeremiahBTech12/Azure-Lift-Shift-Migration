@@ -35,17 +35,17 @@ This project covers the complete migration lifecycle — provisioning infrastruc
 
 • Manual Mobility Service installation and registration for a cross-cloud scenario with no VPN or private connectivity between AWS and Azure, including direct patching of agent configuration files
 
-• Real-world troubleshooting across multiple distinct issues, spanning:
+• Real-world troubleshooting across multiple distinct troubleshooting issues, spanning:
 
-• Azure VM quota limits 
+-  Azure VM quota limits 
 
-• An undocumented bug where the Mobility Service agent hardcodes the replication appliance’s private Azure IP into its runtime config and bypasses DNS — discovered, diagnosed, and worked around through direct log analysis and file patching
+- An undocumented bug where the Mobility Service agent hardcodes the replication appliance’s private Azure IP into its runtime config and bypasses DNS — discovered, diagnosed, and worked around through direct log analysis and file patching
 
-• A missing NSG inbound rule (port 9443) blocking the replication data channel despite correct OS-level firewall rules
+- A missing NSG inbound rule (port 9443) blocking the replication data channel despite correct OS-level firewall rules
 
-• EC2 public IP drift after instance restarts, resolved by attaching an Elastic IP
+- EC2 public IP drift after instance restarts, resolved by attaching an Elastic IP
 
-• Hands-on diagnosis using PowerShell and Azure CLI — service status checks, firewall rule inspection, NSG rule auditing, TCP connectivity testing (Test-NetConnection), and live log analysis (svagents logs) to isolate network-layer vs. application-layer failures
+- Hands-on diagnosis using PowerShell and Azure CLI — service status checks, firewall rule inspection, NSG rule auditing, TCP connectivity testing (Test-NetConnection), and live log analysis (svagents logs) to isolate network-layer vs. application-layer failures
 
 
 ## Design Decisions
