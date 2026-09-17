@@ -24,11 +24,11 @@ Fix: ran winrm quickconfig -quiet on the instance to enable and configure the Wi
 
 2. Local Windows Firewall silently scoped to same-subnet only
 Even after WinRM was enabled, discovery validation from the Azure-side appliance still failed. The default Windows Remote Management (HTTP-In) firewall rule only permits connections from the local subnet — a restriction that isn’t surfaced anywhere in Azure Migrate’s own error messages, so it looks like a WinRM configuration problem rather than a firewall scope problem.
-Fix: (Powershell)
+Fix ran in Powershell:
 
-'''
+```powershell
 Set-NetFirewallRule -DisplayName "Windows Remote Management (HTTP-In)" -RemoteAddress Any
-'''
+```
 
 3. Security Group missing the WinRM port
 Port 5985 (WinRM HTTP) wasn’t open on the instance’s Security Group, so even with WinRM and the local firewall fixed, nothing outside the VPC could reach it.
