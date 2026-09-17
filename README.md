@@ -25,7 +25,7 @@ This project covers the complete migration lifecycle — provisioning infrastruc
 ##  What This Project Demonstrates
 
 ###
-• Cross-cloud migration from AWS to Azure using Azure Migrate and Azure Site Recovery — full end-to-end pipeline from discovery through a successful test migration
+• Cross-Cloud migration from AWS to Azure using Azure Migrate and Azure Site Recovery — full end-to-end pipeline from discovery through a successful test migration
 
 • Infrastructure as Code on both clouds — separate Terraform roots for AWS (EC2, VPC, security groups, IAM) and Azure (VNets, appliance VMs, storage, Recovery Services Vault)
 
