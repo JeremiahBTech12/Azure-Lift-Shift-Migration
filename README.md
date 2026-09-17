@@ -14,7 +14,7 @@ Jeremiah Brown | Azure Cloud Engineer | Linkedin: https://www.linkedin.com/in/je
 Cloud migration is one of the most frequent and highest-value projects in cloud engineering. Organizations shift workloads between providers for reasons ranging from cost optimization and compliance requirements to platform consolidation or mergers that leave them running infrastructure across multiple clouds. Migrations from AWS to Azure are a routine part of this landscape.
 
 Azure Migrate is Microsoft’s built-in tool for handling this process. It identifies source machines, evaluates whether they’re ready to move, keeps their disks synced through continuous background replication, and executes the final cutover with as little downtime as possible. 
-End-to-end migration of a Windows Server workload from AWS EC2 to Azure, using Azure Migrate, Azure Site Recovery, and Terraform to move it across clouds.
+end-to-end migration of a Windows Server workload from AWS EC2 to Azure, using Azure Migrate, Azure Site Recovery, and Terraform to move it across clouds.
 
 This project covers the complete migration lifecycle — provisioning infrastructure, discovering and assessing the source machine, replicating it, and executing cutover — along with troubleshooting the real-world issues that come up when migrating across clouds without private connectivity in place.
 ## Architecture Flow
