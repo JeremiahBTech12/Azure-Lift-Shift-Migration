@@ -109,3 +109,7 @@ Destroy all resources immediately after completing the lab. See teardown instruc
 
 
 ## Complete walkthroughs, configurations, and troubleshooting shown in specified folders.
+[Part 1: AWS Infrastructure](https://github.com/JeremiahBTech12/Azure-Lift-Shift-Migration/tree/main/Part%201%3A%20AWS%20Infrastructure)
+[Part 2: Azure Infrastructure](https://github.com/JeremiahBTech12/Azure-Lift-Shift-Migration/tree/main/Part%202%3A%20Azure%20Infrastructure) 
+[Part 3: Appliance Registration, Discovery & Assessment](https://github.com/JeremiahBTech12/Azure-Lift-Shift-Migration/tree/main/Part%203%3A%20Appliance%20Registration%2C%20Discovery%20%26%20Assessment)
+[Part 4: Replication & Cutover](https://github.com/JeremiahBTech12/Azure-Lift-Shift-Migration/tree/main/Part%204%3A%20Replication%20%26%20Cutover) 
