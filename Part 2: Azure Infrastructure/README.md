@@ -13,10 +13,38 @@ Two resource groups, deliberately separated by purpose:
 	
 Keeping these separate means the staging environment can be torn down cleanly after cutover without touching the actual workload.
 
-	- VNet — 10.1.0.0/16, non-overlapping with the AWS VPC by design
-	- Discovery appliance VM — vmm-al-jeremiah, Standard_D8s_v3 (8 vCPU, 32 GiB)
-	- Replication appliance VM — vm-mig-repl-jeremiah, ultimately Standard_E16s_v5 (16 vCPU, 128 GiB) after extensive resizing (below)
-	- Recovery Services Vault — Migrate-Project-Jeremiah-MigrateVault-647598466
+
+| Resource | Details |
+|---|---|
+| Virtual Network | `10.1.0.0/16` — target network |
+| Subnet | `10.1.1.0/24` (snet-migrate) |
+| Azure Migrate Project | Created manually in the Azure portal — control plane for discovery, assessment, and replication |
+| Storage Account | Standard LRS — replication cache during disk sync |
+| Log Analytics Workspace | Stores discovery data and performance metrics |
+| Recovery Services Vault | Orchestrates replication via Azure Site Recovery |
+| Migration Appliance VM | Windows Server VM used for discovery and Azure Migrate appliance setup — `vmm-al-jeremiah`, Standard_D8s_v3 (8 vCPU, 32 GiB) |
+| Replication Appliance VM | High-capacity VM `vm-mig-repl-jeremiah`, ultimately Standard_E16s_v5 (16 vCPU, 128 GiB), used for replication processing |
+| Network Interfaces | Attached to appliance VMs with public IPs for connectivity |
+| Public IPs | Enables access to appliance VMs |
+| Network Security Groups | Allow RDP and required inbound traffic for appliance access |
+
+##	Prerequisites
+###
+- Azure subscription
+- Azure CLI installed and authenticated
+- Terraform installed
+- Part 1 deployed and EC2 instance running
+
+## File Structure
+### 
+```
+part-2-azure-infrastructure/
+├── main.tf                    # All Azure resources
+├── variables.tf               # Input variable definitions
+├── outputs.tf                 # Resource group, vault, storage outputs
+├── terraform.tfvars           # Your variable values (subscription, region, network ranges, VM sizes, credentials, etc.)
+└── README.md
+```
 
 ## Issues Encountered & Fixes
 
@@ -33,7 +61,7 @@ Fix: set disk_size_gb = 650 on the OS disk in Terraform, then manually extended 
 - Cascading Azure quota walls
 Getting to a working VM size meant clearing several independent quota limits, each with different rules:
 	•	Subscription-wide “Total Regional Cores” maxed at 16/16 — required an explicit increase request (approved instantly).
-	•	Family-specific quota (Standard ESv3: 10/10) was maxed separately from the regional total, and flagged “Not adjustable” — a legacy-family restriction Microsoft applies to push self-service requests toward newer families (Esv5/Esv6/Esv7) instead.
+	•	Family-specific quota (Standard ESv3: 10/10) was maxed separately from the regional total, and flagged “Not adjustable” 
 
 
 ## Key Resource Identifiers
