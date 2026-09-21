@@ -12,6 +12,7 @@ Two resource groups, deliberately separated by purpose:
 	•	rg-migrate-target-jeremiah — home for the final migrated VM
 	
 Keeping these separate means the staging environment can be torn down cleanly after cutover without touching the actual workload.
+After cutover, the migration infrastructure - appliances, storage cache, vault replication state - can be destroyed cleanly without touching the migrated VM. This is the ideal pattern for any real-world migration engagement and makes teardown significantly safer.
 
 
 | Resource | Details |
@@ -46,6 +47,23 @@ part-2-azure-infrastructure/
 └── README.md
 ```
 
+## Deploy
+This phase deploys both the Azure infrastructure and the appliance VMs required for discovery and replication. 
+
+- Initialize Terraform:
+
+terraform init
+
+- Review the plan:
+
+terraform plan
+
+- Deploy:
+
+terraform apply
+Deployment takes approximately 5–10 minutes depending on VM provisioning time.
+
+
 ## Issues Encountered & Fixes
 
 ###
@@ -73,6 +91,21 @@ Getting to a working VM size meant clearing several independent quota limits, ea
 	•	Replication appliance VM: vm-mig-repl-jeremiah (Standard_E16s_v5)
 	•	Recovery Services Vault: Migrate-Project-Jeremiah-MigrateVault-647598466
 
+## Teardown
+Important: Do not destroy Part 2 resources until after Part 4 (cutover) is complete and you have stopped replication in the Azure Migrate portal.
 
+
+### Stop replication first in the Azure portal
+### Azure Migrate → Replicating Machines → Stop Replication
+
+### Then destroy
+terraform destroy
+If terraform destroy fails on the Recovery Services Vault with a "vault is not empty" error:
+
+Go to Azure portal → Recovery Services Vault → rsv-migrate-[yourname]
+Click Replication items → delete all items
+Click Backup items → delete all items
+Retry terraform destroy
+Both appliance VMs, their NICs, NSGs, public IPs, and both resource groups are managed by Terraform in this phase.
 
 [Part 3: Appliance Registration, Discovery & Assessment](https://github.com/JeremiahBTech12/Azure-Lift-Shift-Migration/blob/main/Part%203%3A%20Appliance%20Registration%2C%20Discovery%20%26%20Assessment/README.md) 
