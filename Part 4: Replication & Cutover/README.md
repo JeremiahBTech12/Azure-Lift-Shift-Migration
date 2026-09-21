@@ -1,4 +1,4 @@
-# Phase 4 — Replication & Cutover
+# Part 4 — Replication & Cutover
 
 This phase covers replication using Azure Migrate and Azure Site Recovery: the EC2 instance is prepared for replication, its disk is synchronized to Azure, and a test migration validates that the replicated disk boots correctly as an Azure VM.
 
