@@ -9,6 +9,39 @@ This folder provisions the source environment for the migration: a Windows Serve
 	•	VPC — 10.0.0.0/16, deliberately non-overlapping with the Azure VNet (10.1.0.0/16) used later, in case private connectivity is ever added
 	•	Security Group — inbound rules for RDP, WinRM, and later, SMB/RPC (see below)
 	•	Elastic IP — attached after initial testing revealed the instance’s default public IP changes on every stop/start
+
+
+## Folder Setup
+
+This lab uses two separate Terraform roots — one for AWS resources, one for Azure resources. Keep them separate so you can destroy each side independently.
+
+Windows (PowerShell):
+```powershell
+New-Item -ItemType Directory -Path "$HOME\aws-to-azure-migrate"
+cd "$HOME\aws-to-azure-migrate"
+New-Item -ItemType Directory -Path aws-side, azure-side
+New-Item -ItemType File aws-side\main.tf, aws-side\variables.tf, aws-side\outputs.tf, aws-side\terraform.tfvars
+New-Item -ItemType File azure-side\main.tf, azure-side\variables.tf, azure-side\outputs.tf, azure-side\terraform.tfvars
+```
+
+
+## How to Deploy
+
+###
+ - Initialize Terraform:
+
+terraform init
+
+ - Review the plan:
+
+terraform plan
+
+ - Deploy:
+
+terraform apply
+
+Deployment takes 3–5 minutes. Windows instances take an additional 5 minutes to fully initialize after Terraform completes — wait before attempting RDP.
+
 ## Design Decisions
 
 ###
