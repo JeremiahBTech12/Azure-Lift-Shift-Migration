@@ -99,14 +99,22 @@ w32tm /resync /force
 
 This returned `"ErrorCode": "Success"` — the GUI was misreporting an `ApplianceComponentAlreadyRegistered` internal transition as a failure rather than a no-op success. Registration had actually already succeeded.
 
+
+<img width="640" height="480" alt="IMG_2411" src="https://github.com/user-attachments/assets/d86f9e75-e344-4c38-a51a-1211afcc3921" />
+
+
 ## Step 3 — Add EC2 Credentials and Validate the Discovery Source
 
 Windows credentials for the EC2 instance were added to the discovery appliance, targeting the instance's public IP. Validation initially failed with "unable to connect — bad credentials" — but the credentials were correct. The EC2 instance's public IP had changed after a stop/start cycle (no Elastic IP was attached yet at this point in the project). Fixed by updating the discovery source with the current public IP from the AWS console, and permanently resolved afterward by attaching an Elastic IP (see `1-aws-infrastructure/`).
+
+
 
 ## Step 4 — Start Discovery and Run Assessment
 
 Once WinRM, appliance registration, and the discovery source were all validated, discovery and assessment ran through the standard Azure Migrate workflow with no further issues: the EC2 instance (`EC2AMAZ-UK30H1V`) appeared in inventory, and the resulting assessment showed **~100% Azure-ready** with an estimated cost of **~$39.6/month**.
 
+
+<img width="640" height="480" alt="IMG_2413" src="https://github.com/user-attachments/assets/d29781c7-1caa-4d8c-be51-fb5b87f36025" />
 
 
 ## Troubleshooting
