@@ -3,6 +3,8 @@
 ###
 This folder provisions the source environment for the migration: a Windows Server 2022 EC2 instance representing a legacy on-premises workload, along with the networking and access configuration required to make it discoverable and reachable by Azure Migrate.
 
+## Video walkthrough:
+
 ## What’s Deployed
 ###
 	•	EC2 instance — t3.large (2 vCPU, 8 GiB), Windows Server 2022, deployed via Terraform (main.tf)
