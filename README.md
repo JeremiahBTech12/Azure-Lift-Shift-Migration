@@ -5,7 +5,7 @@
 ![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=flat&logo=powershell&logoColor=white)
 ![Azure Migrate](https://img.shields.io/badge/Azure_Migrate-0078D4?style=flat&logo=microsoftazure&logoColor=white)
 
-## Video walkthrough: 
+## Video walkthrough: https://www.loom.com/share/32b28c99e8a54e7e867472c431e9dbdc
 Jeremiah Brown | Azure Cloud Engineer | Linkedin: https://www.linkedin.com/in/jeremiah-brown12/
 
 ## Project Overview
