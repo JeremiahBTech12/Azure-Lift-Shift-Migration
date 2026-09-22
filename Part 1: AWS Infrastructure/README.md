@@ -3,7 +3,7 @@
 ###
 This folder provisions the source environment for the migration: a Windows Server 2022 EC2 instance representing a legacy on-premises workload, along with the networking and access configuration required to make it discoverable and reachable by Azure Migrate.
 
-## Video walkthrough: https://www.loom.com/share/7d36a6eed5544a2d81019ca3c59360c2
+## Video walkthrough: https://www.loom.com/share/1d383964871c40849633edc1c7fbe4eb
 
 ## What’s Deployed
 ###
