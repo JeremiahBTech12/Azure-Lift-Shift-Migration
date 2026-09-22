@@ -6,6 +6,8 @@ This phase bridges the gap between infrastructure provisioning and actual migrat
 
 > **Important:** Discovery depends on both network connectivity and OS-level configuration. Even with every port open, discovery will fail if WinRM or the local Windows Firewall aren't configured correctly — and the failure mode isn't always obvious from the portal's error messages.
 
+## Video walkthrough:
+
 ## What This Phase Covers
 
 | Step | What Happens |
