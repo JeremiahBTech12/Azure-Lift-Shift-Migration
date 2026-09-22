@@ -4,7 +4,7 @@ This phase covers replication using Azure Migrate and Azure Site Recovery: the E
 
 > **Current status: migration complete.** Replication reached a healthy, **Protected** state, a test migration validated the replicated disk, and the final cutover has been performed and verified — the permanent VM is live in `rg-migrate-target-jeremiah`, reachable via RDP, with the correct hostname and OS.
 
-## Video walkthrough:
+## Video walkthrough: https://www.loom.com/share/05fae90d8ff042f9bfd053ce6a86fec2
 
 ## What This Phase Covers
 
