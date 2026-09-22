@@ -3,7 +3,7 @@
 ###
 This folder provisions the target-side Azure resources: resource groups, networking, and the two appliance VMs (discovery and replication) that Azure Migrate uses to talk to the AWS source environment. 
 
-## Video walkthrough:
+## Video walkthrough: https://www.loom.com/share/f036e229bd7b40db98e8787f70da78b7
 
 ## What’s Deployed
 
