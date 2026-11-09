@@ -1,0 +1,6 @@
+# Copy this file to terraform.tfvars and fill in your own values.
+# terraform.tfvars is git-ignored so real passwords never get committed.
+aws_region     = "us-east-1"
+yourname       = "jeremiah"
+admin_password = "CHANGE_ME"   # strong password; never commit the real one
+

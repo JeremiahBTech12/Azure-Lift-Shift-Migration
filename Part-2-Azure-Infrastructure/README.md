@@ -110,4 +110,4 @@ Click Backup items → delete all items
 Retry terraform destroy
 Both appliance VMs, their NICs, NSGs, public IPs, and both resource groups are managed by Terraform in this phase.
 
-[Part 3: Appliance Registration, Discovery & Assessment](https://github.com/JeremiahBTech12/Azure-Lift-Shift-Migration/blob/main/Part%203%3A%20Appliance%20Registration%2C%20Discovery%20%26%20Assessment/README.md) 
+[Part 3: Appliance Registration, Discovery & Assessment](https://github.com/JeremiahBTech12/Azure-Lift-Shift-Migration/blob/main/Part-3-Appliance-Registration-Discovery-Assessment/README.md) 

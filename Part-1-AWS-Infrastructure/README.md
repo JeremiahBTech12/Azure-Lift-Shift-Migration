@@ -84,4 +84,4 @@ Later in the project (see 4-replication-and-cutover/), enabling replication requ
 	•	Security Group: sg-0a749a021281b54f3
 	•	VPC CIDR: 10.0.0.0/16
 
- [Part 2: Azure Infrastructure](https://github.com/JeremiahBTech12/Azure-Lift-Shift-Migration/blob/main/Part%202%3A%20Azure%20Infrastructure/README.md)
+ [Part 2: Azure Infrastructure](https://github.com/JeremiahBTech12/Azure-Lift-Shift-Migration/blob/main/Part-2-Azure-Infrastructure/README.md)

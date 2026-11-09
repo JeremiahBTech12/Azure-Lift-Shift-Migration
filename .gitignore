@@ -1,0 +1,7 @@
+# Terraform variable files hold passwords - never commit them
+*.tfvars
+!*.tfvars.example
+
+# Terraform state and working files
+*.tfstate*
+.terraform/

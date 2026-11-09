@@ -147,4 +147,4 @@ This confirmed, for example, that `Standard_E8s_v3` (8 vCPUs) reports only 4 phy
 	•	Discovery source credential: ec2winadmin / ec2winadmin2
 
 
-[Part 4: Replication & Cutover](https://github.com/JeremiahBTech12/Azure-Lift-Shift-Migration/blob/main/Part%204%3A%20Replication%20%26%20Cutover/README.md)
+[Part 4: Replication & Cutover](https://github.com/JeremiahBTech12/Azure-Lift-Shift-Migration/blob/main/Part-4-Replication-Cutover/README.md)
